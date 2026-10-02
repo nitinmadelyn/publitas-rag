@@ -1,0 +1,14 @@
+node_modules
+dist
+web/widget/dist
+web/widget/node_modules
+.git
+.env
+.env.example
+*.log
+coverage
+test
+web/widget/test
+.vscode
+.github
+README.md

@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: publitas-rag-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: publitas
+      POSTGRES_PASSWORD: publitas_dev_password
+      POSTGRES_DB: publitas_rag
+    ports:
+      # Host-side 5433 avoids colliding with a locally installed Postgres
+      # that's commonly already bound to 5432. Container-internal port
+      # stays 5432, only the host mapping changes.
+      - '5433:5432'
+    volumes:
+      - publitas_rag_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U publitas -d publitas_rag']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  publitas_rag_pgdata:

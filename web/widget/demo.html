@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Publitas RAG Widget - Local Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 40px; color: #222; }
+    h1 { font-size: 20px; }
+    code { background: #f0f1f5; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Publitas RAG chat widget - local demo</h1>
+  <p>
+    This page stands in for a customer's catalog page. The chat bubble in the
+    bottom-right corner is the actual widget bundle, loaded exactly the way a
+    real site would embed it.
+  </p>
+  <p>
+    Edit the <code>data-*</code> attributes below to point at your local API
+    server and a real catalog slug/language before opening this file.
+  </p>
+
+  <script
+    src="dist/widget.js"
+    data-api-base-url="http://localhost:3000"
+    data-api-key="dev-local-key-change-me"
+    data-catalog="color_street"
+    data-lang="en"
+    data-title="Ask about this catalog"
+    data-bubble-text="Looking for something specific? Ask me 👋"
+    async
+  ></script>
+</body>
+</html>
